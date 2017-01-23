@@ -1,5 +1,10 @@
 # Axon 3.0.1 Auto Configuration Issue
 
+> Update: The issue is the result of having `@EnableAxon` together with
+`axon-spring-boot-starter`. It causes `SpringAxonAutoConfigurer` to be invoked twice
+causing the issue below. See the [JavaDoc](https://github.com/AxonFramework/AxonFramework/blob/master/spring/src/main/java/org/axonframework/spring/config/EnableAxon.java#L14)
+on `@EnableAxon`. 
+
 This minimal project demonstrates the issue (see [AxonFramework#253](https://github.com/AxonFramework/AxonFramework/issues/253))
 in the [Axon 3.0.1](https://github.com/AxonFramework/AxonFramework/releases/tag/axon-3.0.1)
 using the `axon-spring-boot-starter`:
